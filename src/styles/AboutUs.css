@@ -1,0 +1,26 @@
+.AboutUscontainer {
+    position: relative;
+    left: 150px;
+}
+.links nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 0;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.links nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.links nav ul li:last-child {
+    margin-right: 0;
+}
