@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../styles/CreateCard.css'
+import {useHref} from "react-router-dom";
 
 function CreateCard() {
     const [name, setName] = useState('');
@@ -9,9 +10,15 @@ function CreateCard() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
-    console.log(localStorage.getItem('bucketId'), 'hiiii')
+    const savedBucketId = localStorage.getItem('bucketId');
+    console.log(savedBucketId, 'hiiii');
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!savedBucketId) {
+            alert("No bucket found! Please create a bucket first.");
+            return;
+        }
         if (!name) {
             alert("Please enter a card name.");
             return;
@@ -20,7 +27,6 @@ function CreateCard() {
         setLoading(true);
         setError('');
 
-        setBucketId(localStorage.getItem('bucketId'));
         const cardData = {
             name: name,
             link: link,
@@ -29,12 +35,15 @@ function CreateCard() {
 
 
         try {
-            const response = await axios.post('http://localhost:8082/api/cards', cardData);
-            const cardId = response.data.bucketId;
+            const response = await axios.post('http://localhost:8082/cards', cardData);
+            const cardId = response.data.cardId;
             sessionStorage.setItem('cardId', cardId);
             localStorage.setItem('cardId', cardId)
             console.log('Card created successfully:', response.data);
+            alert('Card created successfully!');
+            window.location.href = "/delete_card";
             console.log(sessionStorage, 'hiiii')
+
         } catch (error) {
             console.error('Error creating card:', error);
         }

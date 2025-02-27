@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useState } from 'react';
 
 import '../styles/SignUp.css';
-import {Link, useNavigate} from "react-router-dom";
 
 function SignUp() {
     const [formData, setFormData] = useState({
@@ -33,7 +32,7 @@ function SignUp() {
         }
         setLoading(true);
         setError('');
-        axios.post('http://localhost:8082/api/users', formData)
+        axios.post('http://localhost:8082/users', formData)
             .catch(error => {
                 console.error('There was an error!', error);
                 if (error.response && error.response.data.message === 'Email or Phone Number already in use.') {

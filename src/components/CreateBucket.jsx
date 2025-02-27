@@ -15,7 +15,7 @@ function CreateBucket() {
         { value: 'liveVideos', label: 'Live Videos' },
         { value: 'promotionVideos', label: 'Promotional Videos' }
     ];
-
+    sessionStorage.getItem(userId)
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -38,7 +38,7 @@ function CreateBucket() {
             return;
         }
 
-        axios.post('http://localhost:8082/api/buckets', newBucket)
+        axios.post('http://localhost:8082/buckets', newBucket)
             .then(response => {
                 const bucketId = response.data.bucketId;
                 sessionStorage.setItem('bucketId', bucketId);

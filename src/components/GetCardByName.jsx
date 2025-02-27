@@ -23,18 +23,19 @@ function GetCardByName() {
         setCardId('');
 
         try {
-            const url = `http://localhost:8082/api/card/${name}`;
+            const url = `http://localhost:8082/cards?name=${name}`;
             console.log('Making API request to:', url);
 
             const response = await axios.get(url);
             console.log('API Response:', response);
 
-            if (response.data && response.data.cardId) {
-                setCardId(response.data.cardId);
-                setMessage(`Card ID found: ${response.data.cardId}`);
+            if (response.data && response.data.length > 0) {
+                const foundCard = response.data[0];
+                setCardId(foundCard.id);
+                setMessage(`Card ID found: ${foundCard.id}`);
 
-                localStorage.setItem('cardId', response.data.cardId);
-                console.log('Card found successfully:', response.data);
+                localStorage.setItem('cardId', foundCard.id);
+                console.log('Card found successfully:', foundCard);
                 window.location.href = "/delete_card";
                 console.log(sessionStorage, 'hiiii')
             } else {

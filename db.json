@@ -1,12 +1,124 @@
 {
   "users": [
     {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Doe",
-      "phoneNumber": "1234567890",
-      "email": "john.doe@example.com",
-      "password": "password123"
+      "id": "31b6",
+      "firstName": "Oluwafemi",
+      "lastName": "Janet",
+      "phoneNumber": "08120819973",
+      "email": "Janet@gmail.com",
+      "password": "11hhj"
+    },
+    {
+      "id": "86a4",
+      "firstName": "Oluwafemi",
+      "lastName": "Ife",
+      "phoneNumber": "08146997803",
+      "email": "Ife@gmail.com",
+      "password": "ife88898"
+    },
+    {
+      "id": "0421",
+      "firstName": "Oluwafemi",
+      "lastName": "Kola",
+      "phoneNumber": "08146997803",
+      "email": "Kola@gmail.com",
+      "password": "Kola8888"
     }
-  ]
+  ],
+  "buckets": [
+    {
+      "id": "ec8a",
+      "name": "kiekie",
+      "type": "entertainmentVideos",
+      "userId": "undefined"
+    },
+    {
+      "id": "102a",
+      "name": "education",
+      "type": "educationVideos",
+      "userId": "undefined"
+    }
+  ],
+  "cards": [
+    {
+      "id": "aeb0",
+      "name": "kiekie",
+      "link": "https://www.youtube.com/results?search_query=kiekie+comedy",
+      "bucketId": ""
+    },
+    {
+      "id": "11fd",
+      "name": "kiekie",
+      "link": "https://www.youtube.com/results?search_query=kiekie+comedy",
+      "bucketId": "undefined"
+    },
+    {
+      "id": "610e",
+      "name": "kiekie",
+      "link": "https://www.youtube.com/results?search_query=kiekie+comedy",
+      "bucketId": "undefined"
+    },
+    {
+      "id": "5ab8",
+      "name": "kiekie",
+      "link": "https://www.youtube.com/results?search_query=kiekie+comedy",
+      "bucketId": "undefined"
+    },
+    {
+      "id": "bf0f",
+      "name": "kiekie",
+      "link": "https://www.youtube.com/results?search_query=kiekie+comedy",
+      "bucketId": "undefined"
+    },
+    {
+      "id": "d0b7",
+      "name": "kiekie",
+      "link": "https://www.youtube.com/results?search_query=kiekie+comedy",
+      "bucketId": "undefined"
+    },
+    {
+      "id": "4190",
+      "name": "kiekie",
+      "link": "https://www.youtube.com/results?search_query=kiekie+comedy",
+      "bucketId": "undefined"
+    },
+    {
+      "id": "b264",
+      "name": "kiekie",
+      "link": "https://www.youtube.com/results?search_query=kiekie+comedy",
+      "bucketId": "undefined"
+    },
+    {
+      "id": "5a33",
+      "name": "kiekie",
+      "link": "https://www.youtube.com/results?search_query=kiekie+comedy",
+      "bucketId": "undefined"
+    },
+    {
+      "id": "c518",
+      "name": "kiekie",
+      "link": "https://www.youtube.com/results?search_query=kiekie+comedy",
+      "bucketId": "undefined"
+    },
+    {
+      "id": "d308",
+      "name": "entertainmentVideos",
+      "link": "https://www.youtube.com/watch?v=23sNoTq5b7k",
+      "bucketId": ""
+    },
+    {
+      "id": "c047",
+      "name": "entertainmentVideos",
+      "link": "https://www.youtube.com/watch?v=23sNoTq5b7k",
+      "bucketId": "undefined"
+    },
+    {
+      "name": "fight",
+      "link": "https://www.youtube.com/results?search_query=fight",
+      "id": "3c73"
+    }
+  ],
+  "card": [],
+  "deleted": [],
+  "update": []
 }

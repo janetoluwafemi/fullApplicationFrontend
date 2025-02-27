@@ -3,16 +3,15 @@ import axios from 'axios';
 
 function UpdateCard({ onUpdate }) {
     const [cardData, setCardData] = useState({ name: '', cardId: '', link: '' });
-    const [cardId, setCardId] = useState('');  // Keep the state for cardId
+    const [cardId, setCardId] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
 
     useEffect(() => {
-        // Try to load cardId from localStorage when the component mounts
         const storedCardId = localStorage.getItem('cardId');
         if (storedCardId) {
-            setCardId(storedCardId); // Set cardId if it exists
+            setCardId(storedCardId);
         } else {
             setError("Card ID is missing.");
         }
@@ -32,16 +31,19 @@ function UpdateCard({ onUpdate }) {
         }
 
         const updatedCard = { name: cardData.name, link: cardData.link };
-
+        if (!updatedCard.name || !updatedCard.link) {
+            setError("Both card name and link are required.");
+            setLoading(false);
+            return;
+        }
         try {
-            // Make the PUT request with the correct URL and request body
-            const response = await axios.put(`http://localhost:8082/api/update/${cardId}`, updatedCard);
+            const response = await axios.put(`http://localhost:8082/cards/${cardId}`, updatedCard);
 
             setMessage(response.data.message);
-            sessionStorage.setItem('cardId', cardId); // Storing cardId in sessionStorage
-            localStorage.setItem('cardId', cardId); // Storing cardId in localStorage
+            sessionStorage.setItem('cardId', cardId);
+            localStorage.setItem('cardId', cardId);
             console.log('Card updated successfully:', response.data);
-            onUpdate(); // Assuming this function is passed down as a prop to update the parent component
+            onUpdate();
 
         } catch (error) {
             console.error('There was an error updating the card!', error);
