@@ -23,6 +23,22 @@
       "phoneNumber": "08146997803",
       "email": "Kola@gmail.com",
       "password": "Kola8888"
+    },
+    {
+      "id": "ed81",
+      "firstName": "Oluwafemi",
+      "lastName": "Janet",
+      "phoneNumber": "09065927188",
+      "email": "eniola@gmail.com",
+      "password": "kfkkfkfk"
+    },
+    {
+      "id": "6268",
+      "firstName": "Oluwafemi",
+      "lastName": "Janet",
+      "phoneNumber": "09065927188",
+      "email": "JanetOluwafemi@gmail.com",
+      "password": "io90000"
     }
   ],
   "buckets": [
@@ -36,6 +52,30 @@
       "id": "102a",
       "name": "education",
       "type": "educationVideos",
+      "userId": "undefined"
+    },
+    {
+      "id": "b0bc",
+      "name": "promotion",
+      "type": "promotionVideos",
+      "userId": "undefined"
+    },
+    {
+      "id": "4f84",
+      "name": "food",
+      "type": "entertainmentVideos",
+      "userId": "undefined"
+    },
+    {
+      "id": "dbdb",
+      "name": "entertainmentVideos",
+      "type": "entertainmentVideos",
+      "userId": "undefined"
+    },
+    {
+      "id": "f126",
+      "name": "cloth",
+      "type": "entertainmentVideos",
       "userId": "undefined"
     }
   ],
@@ -116,9 +156,12 @@
       "name": "fight",
       "link": "https://www.youtube.com/results?search_query=fight",
       "id": "3c73"
+    },
+    {
+      "id": "84d5",
+      "name": "kiekie",
+      "link": "https://www.youtube.com/results?search_query=fight",
+      "bucketId": ""
     }
-  ],
-  "card": [],
-  "deleted": [],
-  "update": []
+  ]
 }

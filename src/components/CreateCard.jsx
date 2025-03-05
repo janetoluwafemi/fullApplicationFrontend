@@ -9,6 +9,7 @@ function CreateCard() {
     const [bucketId, setBucketId] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    const [card, setCard] = useState(null);
 
     const savedBucketId = localStorage.getItem('bucketId');
     console.log(savedBucketId, 'hiiii');
@@ -36,6 +37,7 @@ function CreateCard() {
 
         try {
             const response = await axios.post('http://localhost:8082/cards', cardData);
+            setCard(response.data);
             const cardId = response.data.cardId;
             sessionStorage.setItem('cardId', cardId);
             localStorage.setItem('cardId', cardId)
@@ -79,6 +81,16 @@ function CreateCard() {
 
                 <button type="submit">Create Card</button>
             </form>
+
+            {card && (
+                <div className="product-details">
+                    <h2>Created Product:</h2>
+                    <p><strong>Name:</strong> {card.name}</p>
+                    <p><strong>Category:</strong> {card.link}</p>
+                </div>
+            )}
+
+            {error && <div className="error-message">{error}</div>}
         </div>
     );
 }

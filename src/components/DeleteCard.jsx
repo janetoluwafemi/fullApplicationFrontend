@@ -22,9 +22,7 @@ function DeleteCard() {
         setMessage('');
 
         try {
-            // const response = await axios.delete(`http://localhost:8082/deleted/${sessionStorage.getItem('cardId')}`);
-            // setMessage(response.data.message);
-            const url = `http://localhost:8082/deleted/${savedCardId}`;
+            const url = `http://localhost:8082/cards/${savedCardId}`;
             console.log('Making API request to:', url);
 
             const response = await axios.delete(url);
@@ -52,6 +50,7 @@ function DeleteCard() {
                     {loading ? 'Deleting...' : 'Delete Card'}
                 </button>
             </form>
+
         </div>
     );
 }

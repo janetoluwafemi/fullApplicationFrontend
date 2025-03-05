@@ -8,6 +8,7 @@ function CreateBucket() {
     const [type, setType] = useState('entertainmentVideos');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    const [bucket, setBucket] = useState(null);
 
     const bucketTypes = [
         { value: 'entertainmentVideos', label: 'Entertainment Videos' },
@@ -40,6 +41,7 @@ function CreateBucket() {
 
         axios.post('http://localhost:8082/buckets', newBucket)
             .then(response => {
+                setBucket(response.data)
                 const bucketId = response.data.bucketId;
                 sessionStorage.setItem('bucketId', bucketId);
                 localStorage.setItem('bucketId', bucketId)
@@ -94,6 +96,15 @@ function CreateBucket() {
                     {loading ? 'Creating...' : 'Create Bucket'}
                 </button>
             </form>
+            {bucket && (
+                <div className="product-details">
+                    <h2>Created Product:</h2>
+                    <p><strong>Name:</strong> {bucket.name}</p>
+                    <p><strong>Category:</strong> {bucket.type}</p>
+                </div>
+            )}
+
+            {error && <div className="error-message">{error}</div>}
         </div>
     );
 }

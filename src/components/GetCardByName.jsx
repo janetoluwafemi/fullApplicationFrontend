@@ -7,6 +7,7 @@ function GetCardByName() {
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState('');
     const [error, setError] = useState('');
+    const [card, setCard] = useState(null);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -25,19 +26,17 @@ function GetCardByName() {
         try {
             const url = `http://localhost:8082/cards?name=${name}`;
             console.log('Making API request to:', url);
-
             const response = await axios.get(url);
             console.log('API Response:', response);
-
             if (response.data && response.data.length > 0) {
                 const foundCard = response.data[0];
                 setCardId(foundCard.id);
                 setMessage(`Card ID found: ${foundCard.id}`);
-
+                setCard(foundCard);
                 localStorage.setItem('cardId', foundCard.id);
                 console.log('Card found successfully:', foundCard);
                 window.location.href = "/delete_card";
-                console.log(sessionStorage, 'hiiii')
+
             } else {
                 setError('Card not found.');
             }
@@ -48,7 +47,6 @@ function GetCardByName() {
             setLoading(false);
         }
     };
-
 
     return (
         <div>
@@ -71,6 +69,16 @@ function GetCardByName() {
                     {loading ? 'Finding Card...' : 'Find Card'}
                 </button>
             </form>
+
+            {card && (
+                <div className="product-details">
+                    <h2>Card Details:</h2>
+                    <p><strong>Name:</strong> {card.name || 'No name available'}</p>
+                    <p><strong>Category:</strong> {card.link || 'No link available'}</p>
+                </div>
+            )}
+
+            {error && <div className="error-message">{error}</div>}
         </div>
     );
 }
