@@ -17,7 +17,7 @@ function CreateCard() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!savedBucketId) {
-            alert("No bucket found! Please create a bucket first.");
+            alert("No Bucket found! Please create a bucket first.");
             return;
         }
         if (!name) {

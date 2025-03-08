@@ -23,7 +23,7 @@ function DeleteCard() {
 
         try {
             const url = `http://localhost:8082/cards/${savedCardId}`;
-            console.log('Making API Request to:', url);
+            console.log('Making API request to:', url);
 
             const response = await axios.delete(url);
             console.log('API Response:', response);

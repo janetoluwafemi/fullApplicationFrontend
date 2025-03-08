@@ -8,7 +8,7 @@ function Index() {
     return (
         <div className="App">
             <div className="row">
-                <nav className={}>
+                <nav>
                     <ul>
                         <li><Link to="/about-us" className="join">About Us</Link></li>
                         <li><Link to="/sign-up" className="signUp">Sign Up</Link></li>
