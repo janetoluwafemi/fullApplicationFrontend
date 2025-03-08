@@ -7,7 +7,7 @@ function AboutUs() {
     return (
         <div className="AboutUscontainer">
             <div className="links">
-                <nav>
+                <nav className={}>
                     <ul>
                         <li><Link to="/create_bucket" className="join">Create Bucket</Link></li>
                         <li><Link to="/create_card" className="signUp">Create Card</Link></li>

@@ -14,7 +14,7 @@ function GetCardByName() {
         console.log('Form submitted with name:', name);
 
         if (!name) {
-            alert("Please enter a card name.");
+            alert("Please Enter a card name.");
             return;
         }
 

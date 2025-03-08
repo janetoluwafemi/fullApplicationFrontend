@@ -34,7 +34,6 @@ function CreateCard() {
             bucketId: bucketId,
         };
 
-
         try {
             const response = await axios.post('http://localhost:8082/cards', cardData);
             setCard(response.data);

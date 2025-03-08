@@ -27,7 +27,7 @@ function SignUp() {
         console.log(formData);
 
         if (!formData.firstName || !formData.lastName || !formData.phoneNumber || !formData.email || !formData.password) {
-            alert("Please fill in all required fields.");
+            alert("Please Fill in all required fields.");
             return;
         }
         setLoading(true);

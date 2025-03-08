@@ -24,7 +24,7 @@ function UpdateCard({ onUpdate }) {
             const response = await axios.get(`http://localhost:8082/cards/${id}`);
             setCardData({ name: response.data.name, link: response.data.link });
         } catch (error) {
-            console.error('Error fetching card:', error);
+            console.error('Error Fetching card:', error);
             setError('Failed to fetch card data.');
         }
     };

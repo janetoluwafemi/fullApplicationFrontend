@@ -21,7 +21,7 @@ function CreateBucket() {
         e.preventDefault();
 
         if (!name) {
-            alert("Please enter a bucket name.");
+            alert("Please Enter a bucket name.");
             return;
         }
 
